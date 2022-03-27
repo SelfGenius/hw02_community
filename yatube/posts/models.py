@@ -57,4 +57,3 @@ class Post(models.Model):
         ordering = ['-pub_date']
         verbose_name = "Статья"
         verbose_name_plural = "Статьи"
-
