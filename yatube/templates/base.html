@@ -11,15 +11,19 @@
       <meta name="msapplication-TileColor" content="#000">
       <meta name="theme-color" content="#ffffff">
       <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-      <title>{{ title }}</title>
+      <title>
+        {% block title %}
+            Контент не включен=(
+        {% endblock %}
+      </title>
     </head>
     <body>
       <header>
         {% include 'includes/header.html' %}
       </header>
     <main> 
-      {% block content %}
-         Контент не подключен
+      {% block main %}
+        {% include 'includes/main.html' %}
       {% endblock %}
     </main>
   {% include 'includes/footer.html' %}
