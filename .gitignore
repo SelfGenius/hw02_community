@@ -152,3 +152,5 @@ dmypy.json
 yatube/static/
 yatube/static
 yatube/.static/
+yatube/.static/
+.yatube/static/
