@@ -1,11 +1,12 @@
 from django.shortcuts import render, get_object_or_404
-from yatube.settings import NUMBER_OF_ENTRIES
 
 from .models import Post, Group
 
+from yatube.settings import NUMBER_OF_ENTRIES
+
 
 def index(request):
-    posts = Post.objects.select_related()[:NUMBER_OF_ENTRIES]
+    posts = Post.objects.all()[:NUMBER_OF_ENTRIES]
     title = 'Последние обновления на сайте'
     context = {
         'posts': posts,
@@ -17,11 +18,8 @@ def index(request):
 def group_posts(request, slug):
     group = get_object_or_404(Group, slug=slug)
     posts = group.posts.select_related('author').all()
-    title = 'Лев Толстой – зеркало русской революции.'
     context = {
         'group': group,
         'posts': posts,
-        'title': title
-
     }
     return render(request, 'posts/group_list.html', context, )
