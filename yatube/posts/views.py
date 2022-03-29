@@ -16,7 +16,7 @@ def index(request):
 
 def group_posts(request, slug):
     group = get_object_or_404(Group, slug=slug)
-    posts = group.posts.select_related('author').all
+    posts = group.posts.select_related('author').all()
     title = 'Лев Толстой – зеркало русской революции.'
     context = {
         'group': group,
