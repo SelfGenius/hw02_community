@@ -1,8 +1,8 @@
-from django.shortcuts import render, get_object_or_404
-
-from .models import Post, Group
+from django.shortcuts import get_object_or_404, render
 
 from yatube.settings import NUMBER_OF_ENTRIES
+
+from .models import Group, Post
 
 
 def index(request):
