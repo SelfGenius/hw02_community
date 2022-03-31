@@ -6,7 +6,8 @@ from .models import Group, Post
 
 def index(request):
     posts = Post.objects.select_related('author', 'group')[
-            :settings.NUMBER_OF_ENTRIES]
+            : settings.NUMBER_OF_ENTRIES
+    ]
     title = 'Последние обновления на сайте'
     context = {
         'posts': posts,
