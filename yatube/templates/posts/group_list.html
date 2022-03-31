@@ -10,7 +10,7 @@
       {{ group.description }}
     </p>
     {% for post in posts %}
-      {% include 'includes/content.html' %}
+      {% include 'includes/post_for_list.html' %}
     {% if not forloop.last %}<hr>{% endif %}
     {% endfor %}
 {% endblock %}

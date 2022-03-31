@@ -7,7 +7,7 @@
 {% block main %}
   <h1>{{ title }}</h1>
     {% for post in posts %}
-      {% include 'includes/content.html' %}
+      {% include 'includes/post_for_list.html' %}
       {% if post.group %}
         <a href="{% url 'posts:group_list' post.group.slug %}">все записи группы</a>
       {% endif %}
